@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marrakech Evening Itinerary · May 18–21, 2026</title>
+  <style>
+    :root {
+      --sand: #f5e6c8;
+      --terracotta: #c0553a;
+      --saffron: #e8a030;
+      --deep: #1a0f05;
+      --medina: #7b3f20;
+      --teal: #2a7a6f;
+      --night: #0d1b2a;
+      --card: #fffaf3;
+      --check-done: #2a7a6f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--night);
+      color: var(--deep);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #1a0f05 0%, #3d1f08 50%, #0d1b2a 100%);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--saffron);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '☪';
+      font-size: 8rem;
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.06;
+      color: var(--saffron);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--saffron);
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 12px rgba(232,160,48,0.4);
+    }
+    header p {
+      color: #c9aa7a;
+      margin-top: 0.5rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+    }
+    .hotel-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      background: rgba(232,160,48,0.15);
+      border: 1px solid var(--saffron);
+      color: var(--saffron);
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── LEGEND ── */
+    .legend {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1.2rem 1rem;
+      background: #111820;
+      border-bottom: 1px solid #2a3040;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #aab0bc;
+      font-size: 0.82rem;
+      font-family: sans-serif;
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* ── DAY SECTION ── */
+    .day-section {
+      margin-bottom: 3rem;
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.8rem;
+      background: linear-gradient(90deg, var(--medina), #5a2e12);
+      color: #fff;
+    }
+    .day-header .day-num {
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: var(--saffron);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .day-header .day-info h2 {
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
+    }
+    .day-header .day-info p {
+      font-size: 0.82rem;
+      opacity: 0.75;
+      font-family: sans-serif;
+      margin-top: 0.2rem;
+      letter-spacing: 0.08em;
+    }
+    .day-header .theme-tag {
+      margin-left: auto;
+      background: rgba(232,160,48,0.2);
+      border: 1px solid var(--saffron);
+      color: var(--saffron);
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-family: sans-serif;
+      white-space: nowrap;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      padding: 1.5rem 1.8rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 70px 24px 1fr;
+      gap: 0 1rem;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    /* time column */
+    .tl-time {
+      text-align: right;
+      padding-top: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      font-weight: bold;
+      color: var(--terracotta);
+      letter-spacing: 0.05em;
+    }
+
+    /* dot + line column */
+    .tl-spine {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tl-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+      border: 2px solid white;
+      z-index: 1;
+    }
+    .tl-line {
+      flex: 1;
+      width: 2px;
+      background: linear-gradient(to bottom, #d4b896, #e8d0b0);
+      min-height: 20px;
+    }
+    .timeline-item:last-child .tl-line {
+      display: none;
+    }
+
+    /* content column */
+    .tl-content {
+      padding-bottom: 1.4rem;
+    }
+    .tl-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--medina);
+      margin-bottom: 0.15rem;
+    }
+    .tl-location {
+      font-family: sans-serif;
+      font-size: 0.78rem;
+      color: #888;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .tl-desc {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: #3a2a1a;
+    }
+    .tl-desc .tip {
+      display: inline-block;
+      background: #fff3cd;
+      border-left: 3px solid var(--saffron);
+      padding: 0.2rem 0.5rem;
+      font-family: sans-serif;
+      font-size: 0.78rem;
+      color: #6b4c00;
+      margin-top: 0.4rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .tl-desc .avoid {
+      display: inline-block;
+      background: #fde8e8;
+      border-left: 3px solid var(--terracotta);
+      padding: 0.2rem 0.5rem;
+      font-family: sans-serif;
+      font-size: 0.78rem;
+      color: #8b2020;
+      margin-top: 0.4rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .tl-price {
+      display: inline-block;
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      background: #edf7f5;
+      color: var(--teal);
+      border: 1px solid #b8e0da;
+      padding: 0.1rem 0.5rem;
+      border-radius: 10px;
+      margin-top: 0.3rem;
+    }
+    .optional-tag {
+      display: inline-block;
+      font-family: sans-serif;
+      font-size: 0.72rem;
+      background: #f0eefa;
+      color: #6a4fa0;
+      border: 1px solid #c5b8e8;
+      padding: 0.1rem 0.45rem;
+      border-radius: 10px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    /* dot colors */
+    .dot-food    { background: var(--terracotta); }
+    .dot-culture { background: var(--saffron); }
+    .dot-walk    { background: #5a8a6a; }
+    .dot-wellness{ background: var(--teal); }
+    .dot-night   { background: #4a3080; }
+    .dot-desert  { background: #c08030; }
+    .dot-hotel   { background: #888; }
+
+    /* ── OPTION BRANCHES ── */
+    .options-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+    .option-card {
+      background: #f9f2e8;
+      border: 1px solid #ddd0bb;
+      border-radius: 10px;
+      padding: 0.8rem;
+    }
+    .option-label {
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      color: var(--terracotta);
+      margin-bottom: 0.3rem;
+    }
+    .option-card h4 {
+      font-size: 0.9rem;
+      color: var(--medina);
+      margin-bottom: 0.2rem;
+    }
+    .option-card p {
+      font-size: 0.82rem;
+      color: #555;
+      font-family: sans-serif;
+      line-height: 1.45;
+    }
+
+    /* ── CHECKLIST ── */
+    .checklist-section {
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      margin-bottom: 2rem;
+    }
+    .checklist-header {
+      padding: 1rem 1.8rem;
+      background: linear-gradient(90deg, #0d3d36, #0a2a24);
+      color: var(--saffron);
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .checklist-body {
+      padding: 1.2rem 1.8rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 2rem;
+    }
+    .checklist-group {
+      margin-bottom: 1.2rem;
+    }
+    .checklist-group h4 {
+      font-family: sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--terracotta);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.45rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .check-item input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #bbb;
+      border-radius: 4px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .check-item input[type="checkbox"]:checked {
+      background: var(--check-done);
+      border-color: var(--check-done);
+    }
+    .check-item input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      top: -2px;
+      left: 1px;
+      color: white;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .check-item label {
+      font-size: 0.88rem;
+      line-height: 1.4;
+      color: #333;
+      cursor: pointer;
+    }
+    .check-item input:checked + label {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    /* ── TIPS FOOTER ── */
+    .tips-card {
+      background: #1a0f05;
+      border: 1px solid #3d2a10;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      color: #c9aa7a;
+    }
+    .tips-card h3 {
+      color: var(--saffron);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 2rem;
+    }
+    .tip-row {
+      display: flex;
+      gap: 0.6rem;
+      font-family: sans-serif;
+      font-size: 0.83rem;
+      line-height: 1.4;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #2a1a05;
+    }
+    .tip-row strong {
+      color: var(--saffron);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-strip {
+      background: #111820;
+      padding: 1rem 1.8rem;
+      border-top: 1px solid #2a3040;
+    }
+    .progress-label {
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      color: #aab0bc;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.1em;
+    }
+    .progress-bar {
+      height: 6px;
+      background: #2a3040;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--saffron));
+      width: 0%;
+      transition: width 0.5s ease;
+      border-radius: 3px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.9rem; }
+      .options-row { grid-template-columns: 1fr; }
+      .checklist-body { grid-template-columns: 1fr; }
+      .tips-grid { grid-template-columns: 1fr; }
+      .day-header .theme-tag { display: none; }
+      .timeline-item { grid-template-columns: 58px 20px 1fr; }
+    }
+
+    @media print {
+      body { background: white; }
+      .day-section, .checklist-section { box-shadow: none; border: 1px solid #ddd; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>مراكش · Marrakech</h1>
+  <p>EVENING ITINERARY · MAY 18 – 21, 2026 · AFTER 17:00</p>
+  <span class="hotel-badge">📍 Radisson Blu Carré Eden · Gueliz</span>
+</header>
+
+<div class="legend">
+  <span class="legend-item"><span class="legend-dot" style="background:#5a8a6a"></span> Walk / Explore</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#c0553a"></span> Dining</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#e8a030"></span> Culture / Show</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#2a7a6f"></span> Wellness</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#c08030"></span> Desert / Tour</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#4a3080"></span> Nightlife</span>
+</div>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- DAY 1 · MONDAY MAY 18 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-num">01</div>
+      <div class="day-info">
+        <h2>Monday, May 18 — Today</h2>
+        <p>FIRST NIGHT · THE SQUARE AWAKENS</p>
+      </div>
+      <span class="theme-tag">Medina · Jemaa el-Fna</span>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="tl-time">17:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-hotel"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Leave Radisson Blu</div>
+          <div class="tl-location">📍 Hotel lobby, Gueliz</div>
+          <div class="tl-desc">
+            Take a petit taxi (red) to the medina entrance — agree on <strong>20–30 DH</strong> before getting in. Or walk 20 min south on Avenue Mohamed VI to Koutoubia.
+            <br><span class="tip">💡 Say "Jemaa el-Fna, shukran" — every driver knows it.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">17:20</div>
+        <div class="tl-spine"><div class="tl-dot dot-walk"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Souk des Épices + Souk des Teinturiers</div>
+          <div class="tl-location">📍 Rahba Kedima → Souk des Teinturiers, Medina</div>
+          <div class="tl-desc">
+            The spice market at golden hour: saffron, ras el hanout, argan oil, dried rose petals. Then duck into the <strong>Dyers' Souk</strong> — skeins of colored wool hang overhead in the narrow alleys. This is where locals shop, not tourists.
+            <br><span class="avoid">⚠ Ignore men who approach offering to "show you the real souk." Free guides expect money.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">18:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-culture"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Rooftop sundowner over Jemaa el-Fna</div>
+          <div class="tl-location">📍 Les Terrasses de l'Alhambra · north side of the square</div>
+          <div class="tl-desc">
+            Watch the square transform from above as the stalls set up below. Fresh orange juice from any vendor = <strong>4 DH</strong> (≈ €0.37) — a Marrakech institution. Mint tea with ginseng + cinnamon = 3 DH.
+          </div>
+          <span class="tl-price">☕ 3–20 DH for drinks</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">19:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-culture"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Walk Jemaa el-Fna as it peaks</div>
+          <div class="tl-location">📍 Place Jemaa el-Fna · Medina</div>
+          <div class="tl-desc">
+            The square is now alive. Navigate toward the <strong>Gnawa musicians</strong> — men in blue robes playing the guembri (bass lute) and metal castanets. Their circles form deeper in the square, away from the tourist perimeter. This is authentic Sufi spiritual music, not performance.
+            <br>Also look for: storytellers (halqa) in Darija, fire eaters, acrobats.
+            <br><span class="avoid">⚠ Monkey + snake handlers: approach only if you agreed a price first. A photo costs 20–50 DH minimum.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">20:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-food"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Dinner</div>
+          <div class="tl-location">📍 Jemaa el-Fna · Medina</div>
+          <div class="tl-desc">
+            <div class="options-row">
+              <div class="option-card">
+                <div class="option-label">OPTION A · LOCAL FAVOURITE</div>
+                <h4>Chez Chegrouni</h4>
+                <p>3 terraces directly overlooking the square. Beloved by locals and long-time visitors. Tajines, couscous, grilled meats, harira soup. Open until midnight.</p>
+              </div>
+              <div class="option-card">
+                <div class="option-label">OPTION B · FULL IMMERSION</div>
+                <h4>Jemaa el-Fna Street Stalls</h4>
+                <p>~50 stalls under white tents. Walk past front hailers to the cheaper back rows. Try: harira, brochettes, merguez, lamb head, snails in cumin broth. Full meal = 10–50 DH.</p>
+              </div>
+            </div>
+            <br><span class="avoid">⚠ At stalls: no menu = negotiated price. Agree before sitting. No printed price = tourist markup risk.</span>
+          </div>
+          <span class="tl-price">🍽 80–150 DH / person (Chegrouni) · 10–50 DH (stalls)</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">22:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-culture"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Koutoubia Mosque + Mint Tea Ceremony</div>
+          <div class="tl-location">📍 Koutoubia Mosque · 5 min walk west of the square</div>
+          <div class="tl-desc">
+            The 12th-century minaret is beautifully lit at night — visible from most of Marrakech. Free to admire from outside. Then find a medina café for a full <strong>atay ceremony</strong>: tea is poured from height to create foam. This is not a quick drink. Sit. Breathe.
+          </div>
+          <span class="tl-price">🕌 Free (exterior) · ☕ 5–15 DH for tea</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">23:00+</div>
+        <div class="tl-spine"><div class="tl-dot dot-night"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Return to Gueliz or stay out <span class="optional-tag">optional</span></div>
+          <div class="tl-location">📍 Hivernage / Gueliz</div>
+          <div class="tl-desc">
+            Taxi back to Radisson, or walk up Boulevard Mohamed VI. The Hivernage neighborhood around the hotel has late bars and lounges if energy allows.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- DAY 2 · TUESDAY MAY 19 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-num">02</div>
+      <div class="day-info">
+        <h2>Tuesday, May 19</h2>
+        <p>HAMMAM · PALACE FEAST · LIVE MUSIC</p>
+      </div>
+      <span class="theme-tag">Bab Agnaou · Mellah · Dar Yacout</span>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="tl-time">17:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-wellness"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Traditional Hammam — Les Bains de Marrakech</div>
+          <div class="tl-location">📍 2 Derb Sedra, Bab Agnaou · Medina</div>
+          <div class="tl-desc">
+            <strong>Book in advance.</strong> Classic circuit: steam room → kese scrub (black soap + exfoliation glove) → ghassoul clay mask → massage. Stone floors, real heat, no frills — the authentic version.
+            <strong>Closes 19:30</strong> — arrive by 17:00 to get the full treatment.
+            <br><span class="tip">💡 Bring flip-flops. Wear the hammam wrap they provide. Tip the attendant 20–30 DH.</span>
+          </div>
+          <span class="tl-price">💆 250–400 DH / person depending on treatment</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">19:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-walk"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Mellah Evening Walk</div>
+          <div class="tl-location">📍 Mellah (Jewish Quarter) · near Palais el-Badi · Medina</div>
+          <div class="tl-desc">
+            The <strong>Mellah</strong> is the old Jewish quarter, less visited than the main medina souks. At dusk the covered food market here sells olives, preserved lemons, spices, and fresh produce at real local prices. Just walk and observe. The wrought-iron balconies overhead are characteristic of the Jewish medina architecture — very different from the Moorish arches elsewhere.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">20:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-food"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Grand Dinner — Dar Yacout</div>
+          <div class="tl-location">📍 79 Derb Sidi Ahmed Soussi · Medina · <strong>Reserve in advance</strong></div>
+          <div class="tl-desc">
+            A 16th-century palace riad designed by the legendary Bill Willis. The multi-course <strong>diffa</strong> (ceremonial feast) unfolds over 2+ hours: bastilla (pigeon pie with almonds + cinnamon + powdered sugar), multiple tagines, mechoui (slow-roasted lamb), couscous with seven vegetables, Moroccan pastries and tea. <strong>Live oud music on the rooftop terrace</strong> under the stars.
+            <br>This is expensive but it is the genuine grand Moroccan table — not a tourist show, a real palace dinner.
+            <br><span class="tip">💡 Dress up. This is one of the most beautiful rooms in Marrakech.</span>
+          </div>
+          <span class="tl-price">🏛 600–900 DH / person · Book days ahead</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">22:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-night"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Late Evening — Live Music or Rooftop</div>
+          <div class="tl-location">📍 Palais Jad Mahal or Comptoir Darna</div>
+          <div class="tl-desc">
+            <div class="options-row">
+              <div class="option-card">
+                <div class="option-label">INTIMATE · LIVE MUSIC</div>
+                <h4>Palais Jad Mahal</h4>
+                <p>10 Rue Haroun Errachid. Indo-oriental decor, excellent live group, late bar. Good for cocktails without a loud DJ.</p>
+              </div>
+              <div class="option-card">
+                <div class="option-label">LIVELY · BELLY DANCING</div>
+                <h4>Comptoir Darna</h4>
+                <p>Ave Echouhada. Oriental decor, belly dancers, food and drinks. Opens 20:00, stays until 3:00. More theatrical but genuinely fun.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- DAY 3 · WEDNESDAY MAY 20 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-num">03</div>
+      <div class="day-info">
+        <h2>Wednesday, May 20</h2>
+        <p>DESERT SUNSET · MODERN MARRAKECH</p>
+      </div>
+      <span class="theme-tag">Agafay · Gueliz Dining</span>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="tl-time">17:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-desert"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Choose your evening path</div>
+          <div class="tl-location">📍 Hotel pickup or local departure</div>
+          <div class="tl-desc">
+            <div class="options-row">
+              <div class="option-card">
+                <div class="option-label">PATH A · OUT OF THE CITY</div>
+                <h4>Agafay Desert Sunset</h4>
+                <p>Book organized tour (~$30–37/person). Pickup from hotel. Rocky plateau 30 min from city — dramatic moonscape at dusk. Quad bikes or camel ride → campfire → traditional dinner show (tagine, musicians, fire performers) → return ~22:30.</p>
+              </div>
+              <div class="option-card">
+                <div class="option-label">PATH B · CITY EVENING</div>
+                <h4>La Mamounia + Gueliz Dinner</h4>
+                <p>17:30 — One drink at La Mamounia bar (Ave Bab Jdid) — legendary 1920s palace gardens worth seeing even for one cocktail (~200 DH). Then dinner in Gueliz (walking from hotel).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">20:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-food"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Dinner in Gueliz <span class="optional-tag">Path B only / or after desert</span></div>
+          <div class="tl-location">📍 Gueliz · Walking distance from Radisson Blu</div>
+          <div class="tl-desc">
+            Three excellent choices — all less touristy than medina restaurants:
+            <div class="options-row" style="margin-top:0.6rem">
+              <div class="option-card">
+                <div class="option-label">AUTHENTIC · FEMALE CHEFS</div>
+                <h4>Sahbi Sahbi</h4>
+                <p>Collective of Moroccan female home cooks (the "dada" tradition). Regional dishes you won't find elsewhere. Open kitchen. Book ahead.</p>
+              </div>
+              <div class="option-card">
+                <div class="option-label">SHARING PLATES · SOCIAL</div>
+                <h4>Mizaan</h4>
+                <p>Tapas-style Moroccan-Mediterranean: kefta skewers, labneh, harissa-chocolate combos. Warm earthy interiors. Great for groups. Suits all diets.</p>
+              </div>
+            </div>
+            <br>Also: <strong>Farmers</strong> (farm-to-fork, seasonal, organic wines and mocktails with Moroccan herbs) or <strong>+61</strong> (Medi-Moroccan fusion, sardines, black rice crab croquettes, organic market produce).
+          </div>
+          <span class="tl-price">🍽 200–400 DH / person</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">22:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-night"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Hivernage Nightlife <span class="optional-tag">optional</span></div>
+          <div class="tl-location">📍 Boulevard Mohamed VI · near hotel</div>
+          <div class="tl-desc">
+            <strong>Le Pacha</strong> (Boulevard Mohamed VI) is a grand complex with lounge bar, pool, and nightclub — this is where Marrakchi locals and wealthy Moroccans go, not just tourists. Or simply walk back along the lit boulevard.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- DAY 4 · THURSDAY MAY 21 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-num">04</div>
+      <div class="day-info">
+        <h2>Thursday, May 21 — Last Night</h2>
+        <p>DEEP MEDINA · FAREWELL GNAWA</p>
+      </div>
+      <span class="theme-tag">Souk el-Kebir · Nomad · Jemaa el-Fna</span>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="tl-time">17:00</div>
+        <div class="tl-spine"><div class="tl-dot dot-walk"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Deep Souk Circuit — The Working Medina</div>
+          <div class="tl-location">📍 Souk el-Kebir → Souk Cherratine → Rahba Kedima · Medina</div>
+          <div class="tl-desc">
+            Go through <strong>Souk el-Kebir</strong> and veer off the tourist drag into the residential sections: cobblers, carpenters, metalworkers, tailors working in cells no bigger than a wardrobe.
+            <br><br><strong>Souk Cherratine</strong> — leather workers.
+            <br><strong>Rahba Kedima</strong> — the "witch square" where locals buy medicinal herbs, dried chameleons, kohl, and traditional remedies. Just observe.
+            <br><span class="tip">💡 If you want to buy anything in the souks: agree the price before picking up the item. The first price is 3–5× the real price. Walk away once and they'll follow with the real number.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">18:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-food"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Sundowner at Nomad Rooftop</div>
+          <div class="tl-location">📍 Derb Berdaa 1, near Rahba Kedima · Medina</div>
+          <div class="tl-desc">
+            Rooftop restaurant with colorful Moroccan textiles, panoramic views over the medina roofscape, and a relaxed modern vibe. Good for fresh juice, cocktail, or a light starter (cumin calamari, cauliflower salad, harissa chicken) as the light fades.
+          </div>
+          <span class="tl-price">🥂 100–250 DH for drinks and starters</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">19:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-food"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Farewell Dinner — Three Authentic Choices</div>
+          <div class="tl-location">📍 Medina</div>
+          <div class="tl-desc">
+            <div class="options-row">
+              <div class="option-card">
+                <div class="option-label">MOST LOCAL · COOPERATIVE</div>
+                <h4>Amal Centre</h4>
+                <p>Social cooperative employing disadvantaged Moroccan women. Home-style cooking: lentil salads, fish tagine, traditional bread. Very cheap, very real — check dinner hours on the day.</p>
+              </div>
+              <div class="option-card">
+                <div class="option-label">MEDINA · LOCAL CROWD</div>
+                <h4>Naranj</h4>
+                <p>Riad Zitoun el Jdid. Lebanese-Moroccan fusion, kilim-decorated space, hand-cut lanterns. Excellent mezze. Strong local crowd. Not a tourist trap.</p>
+              </div>
+            </div>
+            <br>Or: <strong>Jemaa el-Fna street stalls</strong> — go back one final time and try what you haven't yet: babbouche (snails in cumin broth), seffa (sweet couscous with raisins + almonds), or msemen flatbread with argan and honey.
+          </div>
+          <span class="tl-price">🍽 50–200 DH / person depending on choice</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">21:30</div>
+        <div class="tl-spine"><div class="tl-dot dot-culture"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Final Gnawa Circle — The Real Closing</div>
+          <div class="tl-location">📍 Jemaa el-Fna · deeper into the square</div>
+          <div class="tl-desc">
+            Return to the square after dinner. By 21:30 the tourist perimeter is thinner and the Gnawa circles are deeper and more intense. The guembri bass drone and metal castanet rhythms are trance-inducing. This is the real Marrakech memory to take home.
+            <br><span class="tip">💡 Stand at a respectful distance. Ask before photographing. Drop 20–30 DH in their hat if you stay long.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">23:00+</div>
+        <div class="tl-spine"><div class="tl-dot dot-night"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Theatro Nightclub <span class="optional-tag">optional · opens midnight</span></div>
+          <div class="tl-location">📍 Rue Ibrahim El Mazini · Hivernage</div>
+          <div class="tl-desc">
+            Entry 300 DH. Opens midnight, runs until 5:00. DJs, live acrobats, dancers, and magicians. Young Marrakchi crowd alongside tourists. If you have energy left — this is the place.
+          </div>
+          <span class="tl-price">🎭 300 DH entry · drinks extra</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- CHECKLIST -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="checklist-section">
+    <div class="checklist-header">
+      ☑ Marrakech Checklist — Experiences · Food · Etiquette
+    </div>
+    <div class="progress-strip">
+      <div class="progress-label" id="progress-label">0 of 0 items checked</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+    <div class="checklist-body">
+
+      <div class="checklist-group">
+        <h4>🍽 Food to Try</h4>
+        <label class="check-item"><input type="checkbox"> <label>Bastilla — pigeon pie with almonds, cinnamon, powdered sugar</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Harira — tomato-lentil-chickpea soup (often with dates + chebakia)</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Mechoui — whole slow-roasted lamb</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Merguez brochettes off the grill at a souk stall</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Tagine b'djaaj — chicken tagine with preserved lemon + olives</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Couscous with seven vegetables</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Seffa — sweet couscous with raisins + almonds</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Babbouche — snails in cumin broth from a street stall</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Msemen flatbread with argan oil + honey</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Fresh orange juice at the square (4 DH — non-negotiable)</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Mint tea ceremony — poured from height, full ritual</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Avocado-almond smoothie (jus d'avocat)</label></label>
+      </div>
+
+      <div class="checklist-group">
+        <h4>🌙 Experiences</h4>
+        <label class="check-item"><input type="checkbox"> <label>Watch Gnawa musicians in a real circle (deeper in the square)</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Traditional hammam — steam, kese scrub, ghassoul clay</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Dinner in a historic palace riad (Dar Yacout)</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Sunset over Jemaa el-Fna from a rooftop</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Koutoubia Mosque lit up at night</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Souk des Teinturiers — colored wool at golden hour</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Rahba Kedima — the witch square / apothecary souk</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Mellah (Jewish quarter) evening food market</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Agafay Desert sunset experience</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Live oud music on a riad rooftop</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Belly dancing at Comptoir Darna or Palais Jad Mahal</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Negotiate a purchase in the souks (at least once!)</label></label>
+      </div>
+
+      <div class="checklist-group">
+        <h4>📍 Places to Stand</h4>
+        <label class="check-item"><input type="checkbox"> <label>Nomad rooftop at dusk — medina panorama</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Jemaa el-Fna square after dark — all four corners</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Souk Cherratine — leather workers at work</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Hivernage Boulevard Mohamed VI at night</label></label>
+        <label class="check-item"><input type="checkbox"> <label>La Mamounia gardens (even for one drink)</label></label>
+      </div>
+
+      <div class="checklist-group">
+        <h4>⚠ Avoid These Tourist Traps</h4>
+        <label class="check-item"><input type="checkbox"> <label>Agreed a price with snake / monkey handlers BEFORE approaching</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Ignored "free guide" offers in the souks</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Checked the price before sitting at a street stall</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Agreed taxi fare before getting in (20–30 DH to medina)</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Didn't drink the unsolicited "free" mint tea in a shop</label></label>
+        <label class="check-item"><input type="checkbox"> <label>Asked before photographing people</label></label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- PRACTICAL TIPS -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="tips-card">
+    <h3>⚡ Practical Essentials</h3>
+    <div class="tips-grid">
+      <div>
+        <div class="tip-row"><strong>Taxi</strong> Petit taxi (red), agree 20–30 DH to medina before getting in. Never use the meter.</div>
+        <div class="tip-row"><strong>Cash</strong> Most street stalls and hammams are cash only. ATMs in Gueliz. 1 EUR ≈ 10.8 MAD.</div>
+        <div class="tip-row"><strong>Dress</strong> Cover shoulders + knees in the medina, near mosques. Bring a layer — evenings are cool.</div>
+        <div class="tip-row"><strong>Language</strong> French opens more doors than English. "Shukran" (شكراً = thank you), "La shukran" (no thank you) is essential.</div>
+        <div class="tip-row"><strong>Phones</strong> Keep phones in front pockets in the square. Pickpockets work in crowds.</div>
+      </div>
+      <div>
+        <div class="tip-row"><strong>Reservations</strong> Dar Yacout: book 2–3 days ahead. Hammam: call same morning. Agafay: book online day before.</div>
+        <div class="tip-row"><strong>Orientation</strong> Koutoubia minaret is visible from most of the medina. Always navigate toward it to find your way out.</div>
+        <div class="tip-row"><strong>Negotiating</strong> First price is 3–5× the real price. Walk away once. They'll follow with the real number.</div>
+        <div class="tip-row"><strong>Photos</strong> Gnawa musicians, food stall workers: drop 20–30 DH in the hat if you photograph. Always ask first.</div>
+        <div class="tip-row"><strong>Sources</strong> Built from: Wikivoyage EN + FR (Moroccan-perspective), Timeout Marrakech, TripAdvisor, and French-language Moroccan travel forums.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Checklist progress tracker
+  function updateProgress() {
+    const all = document.querySelectorAll('.check-item input[type="checkbox"]');
+    const checked = document.querySelectorAll('.check-item input[type="checkbox"]:checked');
+    const pct = all.length > 0 ? (checked.length / all.length * 100) : 0;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent =
+      checked.length + ' of ' + all.length + ' items checked (' + Math.round(pct) + '%)';
+  }
+
+  // Persist checkbox state in localStorage
+  const STORAGE_KEY = 'marrakech-checklist-2026';
+
+  function saveState() {
+    const state = {};
+    document.querySelectorAll('.check-item input[type="checkbox"]').forEach((cb, i) => {
+      state[i] = cb.checked;
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      document.querySelectorAll('.check-item input[type="checkbox"]').forEach((cb, i) => {
+        if (saved[i]) cb.checked = true;
+      });
+    } catch(e) {}
+  }
+
+  document.querySelectorAll('.check-item input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => { updateProgress(); saveState(); });
+  });
+
+  loadState();
+  updateProgress();
+</script>
+
+</body>
+</html>
