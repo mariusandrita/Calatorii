@@ -287,6 +287,41 @@ footer { text-align:center; padding:1.2rem 1rem; font-size:0.68rem; color:#2a3d5
 footer a { color:#3a5060; text-decoration:none; }
 footer a:hover { color:var(--saffron); }
 
+/* HISTORY */
+.history-panel { background:linear-gradient(135deg,#1a0e06,#0d1a28); border:1px solid #2a3d50; border-radius:var(--r); padding:1.1rem; margin-bottom:1.5rem; }
+.history-panel h2 { font-family:var(--font-h); font-size:1.3rem; color:var(--saffron); margin-bottom:0.6rem; }
+.history-timeline { display:grid; gap:0.5rem; }
+.ht-row { display:grid; grid-template-columns:72px 1fr; gap:0.7rem; }
+.ht-year { color:var(--saffron); font-family:'Courier New',monospace; font-size:0.78rem; font-weight:900; text-align:right; padding-top:2px; }
+.ht-fact { font-size:0.82rem; color:#c9aa7a; line-height:1.5; border-left:2px solid #2a3d50; padding-left:0.7rem; }
+
+/* LOCAL RESTAURANTS */
+.eat-grid { display:grid; grid-template-columns:1fr; gap:0.6rem; margin-top:0.8rem; }
+@media(min-width:500px) { .eat-grid { grid-template-columns:1fr 1fr; } }
+.eat-card { background:#f7ead7; border:1px solid #ddd0bb; border-radius:10px; padding:0.8rem; }
+.eat-card .eat-name { font-family:var(--font-h); font-size:0.95rem; color:#5a2e12; margin-bottom:0.15rem; }
+.eat-card .eat-ar { font-size:0.78rem; color:#aaa; direction:rtl; text-align:right; font-family:Arial,sans-serif; }
+.eat-card .eat-why { font-size:0.78rem; color:#555; line-height:1.45; margin-top:0.2rem; }
+.eat-card .eat-tag { display:inline-block; background:var(--mint); color:#263d34; font-size:0.66rem; font-weight:700; padding:0.1rem 0.4rem; border-radius:6px; margin-top:0.3rem; }
+
+/* HACKS */
+.hacks-grid { display:grid; grid-template-columns:1fr; gap:0.7rem; }
+@media(min-width:500px) { .hacks-grid { grid-template-columns:1fr 1fr; } }
+.hack { background:var(--paper); border:1px solid rgba(23,18,15,0.1); border-radius:12px; padding:0.9rem; border-left:4px solid var(--cobalt); box-shadow:0 6px 18px rgba(23,18,15,0.07); }
+.hack .hk { font-size:0.6rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--cobalt); margin-bottom:0.25rem; }
+.hack h4 { font-family:var(--font-h); font-size:0.98rem; color:var(--ink); margin-bottom:0.3rem; }
+.hack p { font-size:0.82rem; color:var(--muted); line-height:1.5; }
+.hack .fix { background:#e8f0fa; border-radius:6px; padding:0.3rem 0.5rem; font-size:0.78rem; color:#0d2a4a; margin-top:0.5rem; line-height:1.4; }
+
+/* SHOPPING */
+.shop-grid { display:grid; grid-template-columns:1fr; gap:0.7rem; }
+@media(min-width:500px) { .shop-grid { grid-template-columns:1fr 1fr; } }
+.shop-card { background:var(--paper); border:1px solid rgba(23,18,15,0.1); border-radius:12px; padding:0.9rem; border-left:4px solid var(--olive); box-shadow:0 6px 18px rgba(23,18,15,0.07); }
+.shop-card h4 { font-family:var(--font-h); font-size:0.98rem; color:var(--ink); margin-bottom:0.3rem; }
+.shop-card p { font-size:0.82rem; color:var(--muted); line-height:1.5; }
+.shop-card .test { background:#fff8e1; border-left:3px solid var(--saffron); border-radius:0 5px 5px 0; padding:0.3rem 0.5rem; font-size:0.78rem; color:#6b4c00; margin-top:0.5rem; line-height:1.4; }
+.shop-card .fake { background:#fff0f0; border-left:3px solid var(--clay); border-radius:0 5px 5px 0; padding:0.3rem 0.5rem; font-size:0.78rem; color:#8b2020; margin-top:0.4rem; line-height:1.4; }
+
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   .now-pin, .event, .ev-dot { transition:none; animation:none; }
@@ -303,6 +338,8 @@ footer a:hover { color:var(--saffron); }
   <a href="#wed">Wed</a>
   <a href="#thu">Thu</a>
   <a href="#gems">Gems</a>
+  <a href="#hacks">Hacks</a>
+  <a href="#shopping">Shop</a>
   <a href="#traps">Traps</a>
   <a href="#closed">Icons</a>
   <a href="#sources">Sources</a>
@@ -333,6 +370,17 @@ footer a:hover { color:var(--saffron); }
 </div>
 
 <main>
+
+<!-- HISTORY -->
+<div class="history-panel">
+  <h2>The Ochre City — Brief History</h2>
+  <div class="history-timeline">
+    <div class="ht-row"><div class="ht-year">1070</div><div class="ht-fact">Founded by the Almoravid dynasty (Yusuf ibn Tashfin). The red sandstone walls that give the city its nickname "The Red City" were built in this era. The word "Morocco" in most European languages derives from "Marrakech."</div></div>
+    <div class="ht-row"><div class="ht-year">16th c.</div><div class="ht-fact">Saadian dynasty golden age — the Ben Youssef Madrasa and Saadian Tombs were built. Marrakech became the jewel of North Africa.</div></div>
+    <div class="ht-row"><div class="ht-year">1912</div><div class="ht-fact">French Protectorate begins. Guéliz (La Ville Nouvelle) built alongside the Medina — wide boulevards, contemporary cafes, the world you're staying in at Radisson Blu.</div></div>
+    <div class="ht-row"><div class="ht-year">Now</div><div class="ht-fact">UNESCO World Heritage Medina. Two cities side by side: the 1,000-year labyrinth and the modern French-grid Gueliz. You are based in Gueliz — the Medina is 10–40 min away depending on where you're going.</div></div>
+  </div>
+</div>
 
 <!-- COMPASS -->
 <section id="compass">
@@ -488,6 +536,65 @@ footer a:hover { color:var(--saffron); }
       <p class="desc">Mint tea is hospitality and theatre. Nous-nous is half-espresso, half-milk: the Gueliz local coffee order. Ask for less sugar if needed.</p>
       <span class="price">Ask for sugar on the side</span>
     </article>
+  </div>
+
+  <p class="food-cat">Where Locals Actually Eat — Named Spots</p>
+  <div class="eat-grid">
+    <div class="eat-card">
+      <div class="eat-name">Chez Lamine Hadj Mustapha</div>
+      <div class="eat-ar">حاج مصطفى</div>
+      <p class="eat-why">Historic institution near Derb Semmarine, Jemaa el-Fna. The most respected local spot for <strong>tanjia</strong> and roasted meats — zero tourist pricing.</p>
+      <span class="eat-tag">Tanjia · Mechoui</span>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Chez+Lamine+Hadj+Mustapha+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+    <div class="eat-card">
+      <div class="eat-name">Cafe Tiznit</div>
+      <div class="eat-ar">مقهى طنجيت</div>
+      <p class="eat-why">Tucked behind the Olive Market. Very local, non-touristy. Famous for tanjia cooked the traditional way (hammam embers). Known on Arabic forums.</p>
+      <span class="eat-tag">Tanjia au faran</span>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cafe+Tiznit+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+    <div class="eat-card">
+      <div class="eat-name">Le Chaabi</div>
+      <div class="eat-ar">مطعم الشعبي</div>
+      <p class="eat-why">Classic budget canteen praised on Arabic forums. Best for <strong>kefta and egg tagine</strong>. Zero tourist atmosphere, fast turnover, honest prices.</p>
+      <span class="eat-tag">Tagine · Kefta</span>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Le+Chaabi+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+    <div class="eat-card">
+      <div class="eat-name">Naima Couscous</div>
+      <div class="eat-ar">نعيمة الكسكسي</div>
+      <p class="eat-why">Small cantine in the Medina — feels like eating in a Moroccan family's home. Set menu, sharing platters. <strong>Only on Fridays</strong> — that is when couscous is made fresh after midday prayers.</p>
+      <span class="eat-tag">Friday couscous only</span>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Naima+Couscous+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+    <div class="eat-card">
+      <div class="eat-name">Dar L'hssira</div>
+      <div class="eat-ar">دار الحصيرة</div>
+      <p class="eat-why">Hidden from tourist noise in the Medina. Authentic, well-priced tagines. Known by locals, almost absent from tourist platforms.</p>
+      <span class="eat-tag">Tagine · Medina</span>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Dar+L%27hssira+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+    <div class="eat-card">
+      <div class="eat-name">Patisserie Al Jaouda</div>
+      <div class="eat-ar">الجودة</div>
+      <p class="eat-why">Local Medina bakery. Incredible chicken pastillas to go — grab one as a quick bite between stops. Bakery prices, not restaurant prices.</p>
+      <span class="eat-tag">Pastilla · On the go</span>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Patisserie+Al+Jaouda+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+    <div class="eat-card">
+      <div class="eat-name">Chez Bejgueni</div>
+      <div class="eat-ar">بجويني</div>
+      <p class="eat-why">Local Gueliz favorite for charcoal grills and traditional veal/vegetable tagines. Close to your hotel — the backup plan when you don't want to go to the Medina.</p>
+      <span class="eat-tag">Grills · Gueliz</span>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Chez+Bejgueni+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+    <div class="eat-card">
+      <div class="eat-name">Jemaa el-Fna Stall #14</div>
+      <div class="eat-ar">أكشاك جامع الفنا</div>
+      <p class="eat-why">The golden rule on Arabic forums: find stalls crowded with Moroccan families. Stall #14 specialises in fried seafood. Other stalls serve harira + dates — look for the busy ones, not the ones with touts calling you.</p>
+      <span class="eat-tag">Harira · Seafood · Square</span>
+    </div>
   </div>
 </section>
 
@@ -887,6 +994,103 @@ footer a:hover { color:var(--saffron); }
   </div>
 </section>
 
+<!-- LOCAL HACKS -->
+<section id="hacks">
+  <h2 class="sec-title">Local Hacks<small>Smart moves drawn from local Arabic forums, Wikivoyage, and expat advice</small></h2>
+  <div class="hacks-grid">
+    <div class="hack">
+      <div class="hk">Hack 01 · Transport</div>
+      <h4>Use InDrive or Roby — Not Street Taxis</h4>
+      <p>Taxi drivers in Marrakech are notorious for refusing the meter and overcharging tourists. The local fix: download <strong>inDrive</strong> or <strong>Roby</strong> (Moroccan Uber equivalents). You get a transparent, pre-agreed price before you get in — no negotiation, no scam.</p>
+      <div class="fix">Still in a street taxi? Say "Compteur s'il vous plaît" before closing the door. If they refuse or claim it's broken, walk away.</div>
+    </div>
+    <div class="hack">
+      <div class="hk">Hack 02 · Navigation</div>
+      <h4>The Stationary Direction Rule</h4>
+      <p>Never ask a young man walking on the street for directions in the Medina — this is the fastest route to a "faux guide" who will demand a tip for walking you somewhere.</p>
+      <div class="fix">Only ask someone who is stationary and cannot leave their post: a shopkeeper inside their store, a waiter at a cafe, or a police officer.</div>
+    </div>
+    <div class="hack">
+      <div class="hk">Hack 03 · Souks</div>
+      <h4>The 50% Haggling Rule</h4>
+      <p>Haggling is cultural — not haggling is almost insulting. Start your counter-offer at 30–50% of their initial quoted price. Be friendly, smile, and walk away if the price isn't right. 9 times out of 10, they will call you back with a better number.</p>
+      <div class="fix">Anchor yourself first: visit the <strong>Ensemble Artisanal</strong> (government-regulated, fixed-price artisan complex) to see what fair prices look like before entering the souks.</div>
+    </div>
+    <div class="hack">
+      <div class="hk">Hack 04 · Cash</div>
+      <h4>The Two-Pocket Cash Trick</h4>
+      <p>Never pull out a large wad of cash for a small purchase. Vendors often claim they have no change for large bills, forcing you to tip the difference or buy more.</p>
+      <div class="fix">Keep 20–50 MAD notes in an accessible front pocket for daily purchases. Keep your main cash hidden. Bring plenty of small coins — many stalls cannot break 100+ MAD notes.</div>
+    </div>
+    <div class="hack">
+      <div class="hk">Hack 05 · Sightseeing</div>
+      <h4>Maison de la Photographie — Best Rooftop in the Medina</h4>
+      <p>Tucked in a beautiful riad, this museum has vintage photographs of Morocco from the 19th–20th century. The exhibition is interesting — but the real reason to go is the rooftop terrace: mint tea + panoramic views of the Atlas Mountains. Usually quiet even when the main sites are packed.</p>
+      <div class="fix"><a href="https://www.google.com/maps/search/?api=1&query=Maison+de+la+Photographie+Marrakech" target="_blank" rel="noopener" style="color:#174a63;">Map →</a> Check opening hours in advance.</div>
+    </div>
+    <div class="hack">
+      <div class="hk">Hack 06 · Souks</div>
+      <h4>Souk Semmarine vs. Bab El Khemis</h4>
+      <p><strong>Souk Semmarine</strong> is beautiful but highly commercialised — the main tourist artery where prices are inflated and everything is performative. <strong>Bab El Khemis</strong> flea market (Thursday mornings) is raw, local, zero tourist curation, and where things are much cheaper.</p>
+      <div class="fix">For artisan workshops where things are actually made: wander off the main souk streets into the hidden alleys. Prices drop dramatically the further you get from the tourist path.</div>
+    </div>
+    <div class="hack">
+      <div class="hk">Hack 07 · Hammam</div>
+      <h4>Know Your Hammam Tier Before You Go</h4>
+      <p><strong>Local quartier hammam:</strong> 15–30 MAD. Spartan, public, authentic. Bring your own savon beldi, kessa glove, flip-flops. About hygiene and socialising.<br><strong>Tourist spa hammam:</strong> 150–600+ MAD. Private, luxurious, English-speaking staff.</p>
+      <div class="fix">Book in advance via official website or ask your hotel. Never follow a stranger's recommendation to a "great nearby hammam" — they are collecting a commission. Confirm the full price <em>before</em> undressing.</div>
+    </div>
+    <div class="hack">
+      <div class="hk">Hack 08 · Dress</div>
+      <h4>Cover Up in the Medina</h4>
+      <p>Marrakech is relatively liberal but it is a conservative culture. In the Medina, cover shoulders and knees. You will attract significantly less unwanted attention and show basic respect.</p>
+      <div class="fix">Gueliz (where you're based) is more relaxed. The deeper into the Medina, the more it matters.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOPPING INTEL -->
+<section id="shopping">
+  <h2 class="sec-title">Shopping Intel<small>What to buy, what to test, what to avoid — argan, saffron, rugs, leather</small></h2>
+  <div class="shop-grid">
+    <div class="shop-card">
+      <h4>Amlou — "Moroccan Nutella"</h4>
+      <p>The hidden gem buy that tourists miss because they chase expensive argan oil. Amlou is a rich, nutritious spread of toasted almonds, argan oil, and honey. Absolutely delicious on msemen. Cheap, light to carry, genuinely local.</p>
+      <div class="test">Buy at a local food shop or market stall. No fancy packaging needed — any pot from a local vendor is authentic.</div>
+    </div>
+    <div class="shop-card">
+      <h4>Argan Oil — The Absorption Test</h4>
+      <p>The vast majority of "pure" argan oil sold by street vendors and in main souks is heavily diluted with cheap vegetable oil. Real argan oil is expensive to produce.</p>
+      <div class="test">Test: Pure cosmetic argan oil absorbs into the skin almost instantly and leaves no greasy film. Diluted oil sits on top.</div>
+      <div class="fake">Buy only from certified women's cooperatives or established pharmacies. If the price seems like a bargain, it is 100% fake.</div>
+    </div>
+    <div class="shop-card">
+      <h4>Saffron — The Water Test</h4>
+      <p>Vendors regularly sell dyed corn silk, safflower, or colored synthetic threads as saffron. Never buy powdered saffron — it is too easily faked.</p>
+      <div class="test">Test: Drop threads in warm water. Real saffron slowly releases golden-yellow color. Instant bright red = dye. Also: real threads have a complex earthy/metallic aroma.</div>
+      <div class="fake">Look for the official Moroccan label: <strong>IGP "Safran de Taliouine"</strong>. No label = skip it.</div>
+    </div>
+    <div class="shop-card">
+      <h4>Berber Rugs — The Imperfection Test</h4>
+      <p>True handwoven Berber rugs (Beni Ouarain, Kilim, Boucherouite) have patterns that tell stories from the weaver's life.</p>
+      <div class="test">Test: Look for slight imperfections in the pattern. Perfect symmetry = factory-produced, not handwoven on a traditional loom. Imperfection = authentic.</div>
+      <div class="fake">High-pressure carpet pitch with tea and "my cousin's shop" = tourist commission trap. Find a standalone workshop instead.</div>
+    </div>
+    <div class="shop-card">
+      <h4>Leather — The Smell Test</h4>
+      <p>Marrakech leather (babouches, poufs, bags) is world-class when done properly.</p>
+      <div class="test">Test: High-quality traditionally-tanned leather smells earthy and natural. Cheap rushed tanning smells strongly of chemicals or ammonia.</div>
+      <div class="fake">Tannery "free views" with mint gifts always lead to a shop pitch with commission prices built in.</div>
+    </div>
+    <div class="shop-card">
+      <h4>Ensemble Artisanal — Price Anchor</h4>
+      <p>Government-regulated complex where local artisans sell at <strong>fixed, fair prices</strong>. Not the cheapest place to buy — but the best place to learn what a fair price looks like before entering the souks.</p>
+      <div class="test">Visit here first. Photograph or note prices. Then haggle in the souks starting at 50% of what you saw here.</div>
+      <div style="margin-top:0.4rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ensemble+Artisanal+Marrakech" target="_blank" rel="noopener" style="font-size:0.7rem;">Map</a></div>
+    </div>
+  </div>
+</section>
+
 <!-- TOURIST TRAPS -->
 <section id="traps">
   <h2 class="sec-title">Tourist Trap Field Guide<small>8 scenarios with counter-moves</small></h2>
@@ -939,6 +1143,24 @@ footer a:hover { color:var(--saffron); }
       <p>A "women's argan cooperative" with a free demonstration. Everything is real until the pitch for 800+ MAD cosmetics begins.</p>
       <div class="counter">Counter: Buy argan oil only at a pharmacy or labelled food shop. 30 MAD culinary argan vs 800 MAD "beauty" are not different products.</div>
     </div>
+    <div class="trap">
+      <div class="tn">Trap 09</div>
+      <h4>The Unsolicited Henna Tattoo</h4>
+      <p>Women in the square suddenly grab your hand and start drawing a henna tattoo without permission, then demand payment. Worse: "black henna" (PPD dye) is toxic and causes severe allergic reactions — including chemical burns and permanent scarring.</p>
+      <div class="counter">Counter: Keep hands in pockets or close to your body walking through that section. If grabbed, pull away firmly immediately. Never accept black henna — real henna is always orange-brown, never black.</div>
+    </div>
+    <div class="trap">
+      <div class="tn">Trap 10</div>
+      <h4>The Fake Saffron / Fake Spice Pitch</h4>
+      <p>Vendors regularly sell dyed corn silk or colored synthetic threads as "pure saffron." Powdered saffron is almost always fake. Other spice blends are often cheap fillers with a few real threads on top for visual effect.</p>
+      <div class="counter">Counter: See Shopping Intel section. Only buy threads (not powder), test in warm water, look for IGP Taliouine label. Buy from a pharmacy, not a market stall pitch.</div>
+    </div>
+    <div class="trap">
+      <div class="tn">Trap 11</div>
+      <h4>The "Sahara in a Day" Desert Tour</h4>
+      <p>Street agencies near Jemaa el-Fna sell cheap "Sahara Desert" tours for 1–2 days. What they call Sahara is often the Agafay Desert — a flat, rocky wasteland outside Marrakech. The real sand dunes (Erg Chebbi, Merzouga) are a 9–10 hour drive each way.</p>
+      <div class="counter">Counter: If you want real dunes, book a minimum 3-day/2-night tour with an established, reviewed operator before arriving. Any "Sahara" trip sold on the street for under 800 MAD is either fake dunes or a scam.</div>
+    </div>
   </div>
 </section>
 
@@ -972,6 +1194,24 @@ footer a:hover { color:var(--saffron); }
         <li>Pair with Bahia only on a free morning.</li>
       </ul>
       <div class="chips" style="margin-top:0.7rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=El+Badi+Palace+Marrakech" target="_blank" rel="noopener">Map</a></div>
+    </article>
+    <article class="closing-card">
+      <h3>Maison de la Photographie</h3>
+      <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.6rem;">Vintage photographs of Morocco in a beautiful riad. Usually quiet. <strong>Best rooftop terrace in the Medina</strong> — mint tea + Atlas Mountains view on a clear day.</p>
+      <ul>
+        <li>Any morning or early evening — less crowded than major sites.</li>
+        <li>Go for the rooftop even if you skip the exhibition.</li>
+      </ul>
+      <div class="chips" style="margin-top:0.7rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Maison+de+la+Photographie+Marrakech" target="_blank" rel="noopener">Map</a></div>
+    </article>
+    <article class="closing-card">
+      <h3>Sidi Ghanem District</h3>
+      <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.6rem;">The modern, creative Marrakech almost no tourist sees — showrooms, concept stores, and contemporary artisan workshops in an industrial district.</p>
+      <ul>
+        <li>Best for high-end contemporary Moroccan design without medina chaos.</li>
+        <li>Take a taxi — it's outside the city center.</li>
+      </ul>
+      <div class="chips" style="margin-top:0.7rem;"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sidi+Ghanem+Marrakech" target="_blank" rel="noopener">Map</a></div>
     </article>
   </div>
 </section>

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sIL -A \"Mozilla/5.0\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Djemaa_el_Fna,_evening.JPG/800px-Djemaa_el_Fna,_evening.JPG\")",
+      "Bash(curl -sIL -A \"Mozilla/5.0\" \"https://picsum.photos/seed/marrakech/800/400.jpg\")"
+    ]
+  }
+}
